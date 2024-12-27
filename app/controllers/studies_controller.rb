@@ -4,10 +4,12 @@ class StudiesController < ApplicationController
   # GET /studies or /studies.json
   def index
     @studies = Study.all
+    render json: @studies
   end
 
   # GET /studies/1 or /studies/1.json
   def show
+    render json: @study
   end
 
   # GET /studies/new
@@ -23,48 +25,39 @@ class StudiesController < ApplicationController
   def create
     @study = Study.new(study_params)
 
-    respond_to do |format|
+   
       if @study.save
-        format.html { redirect_to @study, notice: "Study was successfully created." }
-        format.json { render :show, status: :created, location: @study }
+        render json: @study, status: :created 
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @study.errors, status: :unprocessable_entity }
+         render json: @study.errors, status: :unprocessable_entity 
       end
     end
+  
+
+ # PATCH/PUT /studies/1 or /studies/1.json
+ def update
+  if @study.update(study_params)
+    render json: @study, status: :ok # Respond with the updated study in JSON
+  else
+    render json: @study.errors, status: :unprocessable_entity
   end
+end
 
-  # PATCH/PUT /studies/1 or /studies/1.json
-  def update
-    respond_to do |format|
-      if @study.update(study_params)
-        format.html { redirect_to @study, notice: "Study was successfully updated." }
-        format.json { render :show, status: :ok, location: @study }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @study.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+# DELETE /studies/1 or /studies/1.json
+def destroy
+  @study.destroy
+  head :no_content # Respond with no content
+end
 
-  # DELETE /studies/1 or /studies/1.json
-  def destroy
-    @study.destroy!
+private
 
-    respond_to do |format|
-      format.html { redirect_to studies_path, status: :see_other, notice: "Study was successfully destroyed." }
-      format.json { head :no_content }
-    end
-  end
+# Use callbacks to share common setup or constraints between actions.
+def set_study
+  @study = Study.find(params[:id])
+end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_study
-      @study = Study.find(params.expect(:id))
-    end
-
-    # Only allow a list of trusted parameters through.
-    def study_params
-      params.expect(study: [ :title, :started, :completed ])
-    end
+# Only allow a list of trusted parameters through.
+def study_params
+  params.require(:study).permit(:title, :started, :completed)
+end
 end
