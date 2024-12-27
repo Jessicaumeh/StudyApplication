@@ -1,0 +1,3211 @@
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY) /*application='StudyApp'*/[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='StudyApp'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='StudyApp'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-12-21 00:22:15.095087', '2024-12-21 00:22:15.095090') RETURNING "key" /*application='StudyApp'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='StudyApp'*/[0m
+Migrating to CreateStudies (20241221002123)
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='StudyApp'*/[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "studies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "started" boolean, "completed" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='StudyApp'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241221002123') RETURNING "version" /*application='StudyApp'*/[0m
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='StudyApp'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='StudyApp'*/[0m
+Started GET "/" for 127.0.0.1 at 2024-12-21 00:39:44 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (4.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='StudyApp'*/[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /root/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-8.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /root/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-8.0.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.9ms | GC: 0.0ms)
+Completed 200 OK in 1767ms (Views: 76.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-21 00:40:17 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /root/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-8.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /root/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-8.0.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 652ms (Views: 1.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-21 00:41:10 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /root/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-8.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /root/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-8.0.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 644ms (Views: 2.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 09:27:45 +0000
+Started GET "/studies" for ::1 at 2024-12-22 09:27:45 +0000
+Started GET "/studyApp" for ::1 at 2024-12-22 09:27:45 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (3.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='StudyApp'*/[0m
+  
+ActionController::RoutingError (No route matches [GET] "/studies"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/studies"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/studyApp"):
+  
+Started GET "/favicon.ico" for ::1 at 2024-12-22 09:27:47 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/studiea" for ::1 at 2024-12-22 09:27:55 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/studiea"):
+  
+Started GET "/studies" for ::1 at 2024-12-22 09:27:59 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (47.6ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/index.html.erb within layouts/application (Duration: 60.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 315.6ms | GC: 4.5ms)
+Completed 200 OK in 2805ms (Views: 315.2ms | ActiveRecord: 47.7ms (1 query, 0 cached) | GC: 4.5ms)
+
+
+Started GET "/assets/application-8b441ae0.css" for ::1 at 2024-12-22 09:28:02 +0000
+Started GET "/assets/application-bfcdf840.js" for ::1 at 2024-12-22 09:28:02 +0000
+Started GET "/assets/turbo.min-fae85750.js" for ::1 at 2024-12-22 09:28:02 +0000
+Started GET "/assets/controllers/hello_controller-708796bd.js" for ::1 at 2024-12-22 09:28:02 +0000
+Started GET "/assets/controllers/index-ee64e1f1.js" for ::1 at 2024-12-22 09:28:02 +0000
+Started GET "/assets/stimulus.min-4b1e420e.js" for ::1 at 2024-12-22 09:28:02 +0000
+Started GET "/assets/stimulus-loading-1fc53fe7.js" for ::1 at 2024-12-22 09:28:02 +0000
+Started GET "/assets/controllers/application-3affb389.js" for ::1 at 2024-12-22 09:28:02 +0000
+Started GET "/studies/new" for ::1 at 2024-12-22 09:28:05 +0000
+Processing by StudiesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/new.html.erb within layouts/application
+  Rendered studies/_form.html.erb (Duration: 218.3ms | GC: 0.4ms)
+  Rendered studies/new.html.erb within layouts/application (Duration: 280.3ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 283.6ms | GC: 0.6ms)
+Completed 200 OK in 1014ms (Views: 285.4ms | ActiveRecord: 3.2ms (0 queries, 0 cached) | GC: 0.8ms)
+
+
+Started POST "/studies" for ::1 at 2024-12-22 09:28:26 +0000
+Processing by StudiesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "study"=>{"title"=>"CA1", "started"=>"0", "completed"=>"0"}, "commit"=>"Create Study"}
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:27:in `block in create'
+  [1m[36mStudy Create (3.9ms)[0m  [1m[32mINSERT INTO "studies" ("title", "started", "completed", "created_at", "updated_at") VALUES ('CA1', 0, 0, '2024-12-22 09:28:27.542703', '2024-12-22 09:28:27.542703') RETURNING "id" /*action='create',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (30.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/studies/1
+Completed 302 Found in 743ms (ActiveRecord: 34.7ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/studies/1" for ::1 at 2024-12-22 09:28:27 +0000
+Processing by StudiesController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mStudy Load (3.5ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 1 LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  Rendering layout layouts/application.html.erb
+  Rendering studies/show.html.erb within layouts/application
+  Rendered studies/_study.html.erb (Duration: 4.2ms | GC: 0.0ms)
+  Rendered studies/show.html.erb within layouts/application (Duration: 59.7ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 63.2ms | GC: 0.4ms)
+Completed 200 OK in 844ms (Views: 65.1ms | ActiveRecord: 3.5ms (1 query, 0 cached) | GC: 0.8ms)
+
+
+Started DELETE "/studies/1" for ::1 at 2024-12-22 09:28:32 +0000
+Processing by StudiesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mStudy Load (0.7ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 1 LIMIT 1 /*action='destroy',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='destroy',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:52:in `destroy'
+  [1m[36mStudy Destroy (3.2ms)[0m  [1m[31mDELETE FROM "studies" WHERE "studies"."id" = 1 /*action='destroy',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='destroy',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:52:in `destroy'
+Redirected to http://localhost:3000/studies
+Completed 303 See Other in 719ms (ActiveRecord: 5.2ms (2 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 09:28:33 +0000
+Processing by StudiesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (1.7ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/index.html.erb within layouts/application (Duration: 5.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | GC: 0.3ms)
+Completed 200 OK in 707ms (Views: 6.6ms | ActiveRecord: 1.7ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 09:49:37 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (65.4ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/index.html.erb within layouts/application (Duration: 69.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 71.7ms | GC: 0.0ms)
+Completed 200 OK in 836ms (Views: 7.2ms | ActiveRecord: 65.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 09:51:57 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.8ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/index.html.erb within layouts/application (Duration: 4.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | GC: 0.0ms)
+Completed 200 OK in 592ms (Views: 6.9ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies/new" for ::1 at 2024-12-22 09:53:42 +0000
+Processing by StudiesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/new.html.erb within layouts/application
+  Rendered studies/_form.html.erb (Duration: 1.6ms | GC: 0.0ms)
+  Rendered studies/new.html.erb within layouts/application (Duration: 3.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | GC: 0.0ms)
+Completed 200 OK in 833ms (Views: 9.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/studies" for ::1 at 2024-12-22 09:54:20 +0000
+Processing by StudiesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "study"=>{"title"=>"CA1", "started"=>"1", "completed"=>"0"}, "commit"=>"Create Study"}
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:27:in `block in create'
+  [1m[36mStudy Create (2.8ms)[0m  [1m[32mINSERT INTO "studies" ("title", "started", "completed", "created_at", "updated_at") VALUES ('CA1', 1, 0, '2024-12-22 09:54:21.366015', '2024-12-22 09:54:21.366015') RETURNING "id" /*action='create',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (26.7ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/studies/2
+Completed 302 Found in 546ms (ActiveRecord: 30.1ms (1 query, 0 cached) | GC: 5.8ms)
+
+
+Started GET "/studies/2" for ::1 at 2024-12-22 09:54:21 +0000
+Processing by StudiesController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mStudy Load (2.3ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 2 LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  Rendering layout layouts/application.html.erb
+  Rendering studies/show.html.erb within layouts/application
+  Rendered studies/_study.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered studies/show.html.erb within layouts/application (Duration: 3.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | GC: 0.0ms)
+Completed 200 OK in 633ms (Views: 6.0ms | ActiveRecord: 2.3ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 09:56:29 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.6ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 5.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | GC: 0.0ms)
+Completed 200 OK in 783ms (Views: 7.9ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 09:56:31 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.9ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 5.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | GC: 0.0ms)
+Completed 200 OK in 535ms (Views: 7.6ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 09:58:26 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.9ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 6.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | GC: 0.0ms)
+Completed 200 OK in 724ms (Views: 9.1ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies/2" for ::1 at 2024-12-22 09:58:29 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mStudy Load (0.4ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 2 LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  Rendering layout layouts/application.html.erb
+  Rendering studies/show.html.erb within layouts/application
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/show.html.erb within layouts/application (Duration: 2.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | GC: 0.0ms)
+Completed 200 OK in 707ms (Views: 5.1ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies/2" for ::1 at 2024-12-22 09:58:30 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mStudy Load (0.4ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 2 LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  Rendering layout layouts/application.html.erb
+  Rendering studies/show.html.erb within layouts/application
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/show.html.erb within layouts/application (Duration: 2.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | GC: 0.0ms)
+Completed 200 OK in 751ms (Views: 6.0ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started DELETE "/studies/2" for ::1 at 2024-12-22 09:58:32 +0000
+Processing by StudiesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"2"}
+  [1m[36mStudy Load (0.4ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 2 LIMIT 1 /*action='destroy',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='destroy',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:52:in `destroy'
+  [1m[36mStudy Destroy (2.2ms)[0m  [1m[31mDELETE FROM "studies" WHERE "studies"."id" = 2 /*action='destroy',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='destroy',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:52:in `destroy'
+Redirected to http://localhost:3000/studies
+Completed 303 See Other in 596ms (ActiveRecord: 3.6ms (2 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 09:58:33 +0000
+Processing by StudiesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (1.7ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/index.html.erb within layouts/application (Duration: 6.3ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | GC: 0.3ms)
+Completed 200 OK in 709ms (Views: 8.6ms | ActiveRecord: 1.7ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/studies/new" for ::1 at 2024-12-22 09:58:35 +0000
+Processing by StudiesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/new.html.erb within layouts/application
+  Rendered studies/_form.html.erb (Duration: 2.9ms | GC: 1.0ms)
+  Rendered studies/new.html.erb within layouts/application (Duration: 4.5ms | GC: 1.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | GC: 1.0ms)
+Completed 200 OK in 1190ms (Views: 7.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 09:59:27 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.6ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/index.html.erb within layouts/application (Duration: 4.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | GC: 0.0ms)
+Completed 200 OK in 794ms (Views: 7.6ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 10:02:32 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.4ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/index.html.erb within layouts/application (Duration: 5.2ms | GC: 1.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | GC: 1.0ms)
+Completed 200 OK in 830ms (Views: 9.1ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 10:22:01 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (5.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='StudyApp'*/[0m
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (44.2ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/index.html.erb within layouts/application (Duration: 147.8ms | GC: 5.8ms)
+  Rendered layout layouts/application.html.erb (Duration: 359.0ms | GC: 33.6ms)
+Completed 200 OK in 3300ms (Views: 442.9ms | ActiveRecord: 44.2ms (1 query, 0 cached) | GC: 36.8ms)
+
+
+Started GET "/studies/study_apps" for ::1 at 2024-12-22 10:23:58 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"study_apps"}
+  [1m[36mStudy Load (0.9ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = NULL LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+Completed 404 Not Found in 889ms (ActiveRecord: 5.6ms (1 query, 0 cached) | GC: 0.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Study with 'id'=study_apps):
+  
+app/controllers/studies_controller.rb:63:in `set_study'
+Started GET "/studies/study_apps" for ::1 at 2024-12-22 10:24:00 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"study_apps"}
+  [1m[36mStudy Load (0.7ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = NULL LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+Completed 404 Not Found in 853ms (ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Study with 'id'=study_apps):
+  
+app/controllers/studies_controller.rb:63:in `set_study'
+Started OPTIONS "/studies/study_apps" for ::1 at 2024-12-22 10:32:12 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies/study_apps"):
+  
+Started OPTIONS "/studies/study_apps" for ::1 at 2024-12-22 10:32:14 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies/study_apps"):
+  
+Started GET "/studies/new" for ::1 at 2024-12-22 10:32:34 +0000
+Processing by StudiesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/new.html.erb within layouts/application
+  Rendered studies/_form.html.erb (Duration: 131.9ms | GC: 0.0ms)
+  Rendered studies/new.html.erb within layouts/application (Duration: 210.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 215.4ms | GC: 0.0ms)
+Completed 200 OK in 1058ms (Views: 218.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/studies/new" for ::1 at 2024-12-22 10:32:35 +0000
+Processing by StudiesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/new.html.erb within layouts/application
+  Rendered studies/_form.html.erb (Duration: 1.7ms | GC: 0.0ms)
+  Rendered studies/new.html.erb within layouts/application (Duration: 3.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | GC: 0.0ms)
+Completed 200 OK in 754ms (Views: 6.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies/studies" for ::1 at 2024-12-22 10:34:58 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"studies"}
+  [1m[36mStudy Load (65.4ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = NULL LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+Completed 404 Not Found in 741ms (ActiveRecord: 65.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Study with 'id'=studies):
+  
+app/controllers/studies_controller.rb:63:in `set_study'
+Started GET "/studies/studies" for ::1 at 2024-12-22 10:34:59 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"studies"}
+  [1m[36mStudy Load (0.6ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = NULL LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+Completed 404 Not Found in 708ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Study with 'id'=studies):
+  
+app/controllers/studies_controller.rb:63:in `set_study'
+Started GET "/studies/study_apps" for ::1 at 2024-12-22 10:35:07 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"study_apps"}
+  [1m[36mStudy Load (0.6ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = NULL LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+Completed 404 Not Found in 693ms (ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Study with 'id'=study_apps):
+  
+app/controllers/studies_controller.rb:63:in `set_study'
+Started GET "/studies/study_apps" for ::1 at 2024-12-22 10:35:08 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"study_apps"}
+  [1m[36mStudy Load (1.7ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = NULL LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+Completed 404 Not Found in 725ms (ActiveRecord: 1.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Study with 'id'=study_apps):
+  
+app/controllers/studies_controller.rb:63:in `set_study'
+Started GET "/studies/study_apps" for ::1 at 2024-12-22 10:35:54 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"study_apps"}
+  [1m[36mStudy Load (0.7ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = NULL LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+Completed 404 Not Found in 710ms (ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Study with 'id'=study_apps):
+  
+app/controllers/studies_controller.rb:63:in `set_study'
+Started GET "/studies/study_apps" for ::1 at 2024-12-22 10:35:55 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"study_apps"}
+  [1m[36mStudy Load (0.9ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = NULL LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+Completed 404 Not Found in 738ms (ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Study with 'id'=study_apps):
+  
+app/controllers/studies_controller.rb:63:in `set_study'
+Started GET "/studies/new" for ::1 at 2024-12-22 10:39:07 +0000
+Processing by StudiesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/new.html.erb within layouts/application
+  Rendered studies/_form.html.erb (Duration: 5.1ms | GC: 0.0ms)
+  Rendered studies/new.html.erb within layouts/application (Duration: 9.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | GC: 0.0ms)
+Completed 200 OK in 770ms (Views: 18.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies/new" for ::1 at 2024-12-22 10:39:09 +0000
+Processing by StudiesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/new.html.erb within layouts/application
+  Rendered studies/_form.html.erb (Duration: 1.6ms | GC: 0.0ms)
+  Rendered studies/new.html.erb within layouts/application (Duration: 3.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | GC: 0.0ms)
+Completed 200 OK in 818ms (Views: 5.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 10:42:43 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (77.1ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/index.html.erb within layouts/application (Duration: 84.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 87.1ms | GC: 0.0ms)
+Completed 200 OK in 831ms (Views: 11.5ms | ActiveRecord: 76.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 10:42:45 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (1.1ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/index.html.erb within layouts/application (Duration: 4.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | GC: 0.0ms)
+Completed 200 OK in 719ms (Views: 6.3ms | ActiveRecord: 1.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies/new" for ::1 at 2024-12-22 10:42:46 +0000
+Processing by StudiesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/new.html.erb within layouts/application
+  Rendered studies/_form.html.erb (Duration: 1.9ms | GC: 0.0ms)
+  Rendered studies/new.html.erb within layouts/application (Duration: 3.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | GC: 0.0ms)
+Completed 200 OK in 1052ms (Views: 6.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies/new" for ::1 at 2024-12-22 10:43:38 +0000
+Processing by StudiesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/new.html.erb within layouts/application
+  Rendered studies/_form.html.erb (Duration: 2.3ms | GC: 0.0ms)
+  Rendered studies/new.html.erb within layouts/application (Duration: 5.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | GC: 0.0ms)
+Completed 200 OK in 773ms (Views: 9.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/studies" for ::1 at 2024-12-22 10:43:59 +0000
+Processing by StudiesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "study"=>{"title"=>"CA1", "started"=>"0", "completed"=>"0"}, "commit"=>"Create Study"}
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:27:in `block in create'
+  [1m[36mStudy Create (4.2ms)[0m  [1m[32mINSERT INTO "studies" ("title", "started", "completed", "created_at", "updated_at") VALUES ('CA1', 0, 0, '2024-12-22 10:44:00.223561', '2024-12-22 10:44:00.223561') RETURNING "id" /*action='create',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (25.9ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/studies/3
+Completed 302 Found in 909ms (ActiveRecord: 30.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies/3" for ::1 at 2024-12-22 10:44:00 +0000
+Processing by StudiesController#show as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+  [1m[36mStudy Load (2.4ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 3 LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  Rendering layout layouts/application.html.erb
+  Rendering studies/show.html.erb within layouts/application
+  Rendered studies/_study.html.erb (Duration: 8.9ms | GC: 0.0ms)
+  Rendered studies/show.html.erb within layouts/application (Duration: 86.1ms | GC: 0.8ms)
+  Rendered layout layouts/application.html.erb (Duration: 89.7ms | GC: 0.8ms)
+Completed 200 OK in 856ms (Views: 91.5ms | ActiveRecord: 2.4ms (1 query, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 10:44:05 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.9ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 6.5ms | GC: 0.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | GC: 0.7ms)
+Completed 200 OK in 734ms (Views: 8.4ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 10:44:55 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.7ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 6.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | GC: 0.0ms)
+Completed 200 OK in 729ms (Views: 9.6ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 10:44:56 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.6ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 5.9ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | GC: 0.3ms)
+Completed 200 OK in 832ms (Views: 7.9ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 10:44:57 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.7ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 5.9ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | GC: 0.4ms)
+Completed 200 OK in 712ms (Views: 8.9ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/studies/study_apps" for ::1 at 2024-12-22 10:49:30 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"study_apps"}
+  [1m[36mStudy Load (0.7ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = NULL LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+Completed 404 Not Found in 602ms (ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Study with 'id'=study_apps):
+  
+app/controllers/studies_controller.rb:63:in `set_study'
+Started GET "/studies/study_apps" for ::1 at 2024-12-22 10:49:31 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"study_apps"}
+  [1m[36mStudy Load (0.6ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = NULL LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+Completed 404 Not Found in 777ms (ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Study with 'id'=study_apps):
+  
+app/controllers/studies_controller.rb:63:in `set_study'
+Started GET "/studies/study_apps" for ::1 at 2024-12-22 11:14:20 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"study_apps"}
+  [1m[36mStudy Load (50.2ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = NULL LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+Completed 404 Not Found in 857ms (ActiveRecord: 50.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Study with 'id'=study_apps):
+  
+app/controllers/studies_controller.rb:63:in `set_study'
+Started GET "/studies/study_apps" for ::1 at 2024-12-22 11:14:21 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"study_apps"}
+  [1m[36mStudy Load (0.8ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = NULL LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+Completed 404 Not Found in 563ms (ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Study with 'id'=study_apps):
+  
+app/controllers/studies_controller.rb:63:in `set_study'
+Started GET "/studies/study_apps" for ::1 at 2024-12-22 11:16:26 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"study_apps"}
+  [1m[36mStudy Load (1.0ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = NULL LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+Completed 404 Not Found in 721ms (ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Study with 'id'=study_apps):
+  
+app/controllers/studies_controller.rb:63:in `set_study'
+Started GET "/studies/study_apps" for ::1 at 2024-12-22 11:16:27 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"study_apps"}
+  [1m[36mStudy Load (0.6ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = NULL LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+Completed 404 Not Found in 756ms (ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Study with 'id'=study_apps):
+  
+app/controllers/studies_controller.rb:63:in `set_study'
+Started GET "/studies/study_apps" for ::1 at 2024-12-22 11:16:55 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"study_apps"}
+  [1m[36mStudy Load (0.8ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = NULL LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+Completed 404 Not Found in 701ms (ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Study with 'id'=study_apps):
+  
+app/controllers/studies_controller.rb:63:in `set_study'
+Started GET "/studies/study_apps" for ::1 at 2024-12-22 11:16:56 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"study_apps"}
+  [1m[36mStudy Load (0.6ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = NULL LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+Completed 404 Not Found in 682ms (ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Study with 'id'=study_apps):
+  
+app/controllers/studies_controller.rb:63:in `set_study'
+Started OPTIONS "/studies/study_apps" for ::1 at 2024-12-22 11:17:00 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies/study_apps"):
+  
+Started OPTIONS "/studies/study_apps" for ::1 at 2024-12-22 11:17:01 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies/study_apps"):
+  
+Started GET "/studies/3" for ::1 at 2024-12-22 11:17:10 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mStudy Load (2.1ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 3 LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  Rendering layout layouts/application.html.erb
+  Rendering studies/show.html.erb within layouts/application
+  Rendered studies/_study.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered studies/show.html.erb within layouts/application (Duration: 3.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | GC: 0.0ms)
+Completed 200 OK in 799ms (Views: 8.9ms | ActiveRecord: 2.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies/3/edit" for ::1 at 2024-12-22 11:17:13 +0000
+Processing by StudiesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mStudy Load (0.7ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 3 LIMIT 1 /*action='edit',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  Rendering layout layouts/application.html.erb
+  Rendering studies/edit.html.erb within layouts/application
+  Rendered studies/_form.html.erb (Duration: 1.7ms | GC: 0.0ms)
+  Rendered studies/edit.html.erb within layouts/application (Duration: 11.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | GC: 0.0ms)
+Completed 200 OK in 735ms (Views: 15.3ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 11:17:15 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.7ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 4.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | GC: 0.0ms)
+Completed 200 OK in 536ms (Views: 6.6ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies/new" for ::1 at 2024-12-22 11:20:19 +0000
+Processing by StudiesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/new.html.erb within layouts/application
+  Rendered studies/_form.html.erb (Duration: 2.9ms | GC: 0.0ms)
+  Rendered studies/new.html.erb within layouts/application (Duration: 4.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | GC: 0.0ms)
+Completed 200 OK in 689ms (Views: 7.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 11:25:06 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (101.6ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 118.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 124.5ms | GC: 0.0ms)
+Completed 200 OK in 858ms (Views: 26.4ms | ActiveRecord: 101.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies/study_apps" for ::1 at 2024-12-22 11:26:24 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"study_apps"}
+  [1m[36mStudy Load (0.9ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = NULL LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+Completed 404 Not Found in 676ms (ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Study with 'id'=study_apps):
+  
+app/controllers/studies_controller.rb:63:in `set_study'
+Started GET "/studies/study_apps" for ::1 at 2024-12-22 11:26:25 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"study_apps"}
+Started GET "/studies/study_apps" for ::1 at 2024-12-22 11:26:25 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"study_apps"}
+  [1m[36mStudy Load (0.9ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = NULL LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+Completed 404 Not Found in 806ms (ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Study with 'id'=study_apps):
+  
+app/controllers/studies_controller.rb:63:in `set_study'
+  [1m[36mStudy Load (0.6ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = NULL LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+Completed 404 Not Found in 933ms (ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 35.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Study with 'id'=study_apps):
+  
+app/controllers/studies_controller.rb:63:in `set_study'
+Started GET "/studies/study_apps" for ::1 at 2024-12-22 11:26:26 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"study_apps"}
+  [1m[36mStudy Load (0.6ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = NULL LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+Completed 404 Not Found in 586ms (ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Study with 'id'=study_apps):
+  
+app/controllers/studies_controller.rb:63:in `set_study'
+Started GET "/studies/3" for ::1 at 2024-12-22 11:27:02 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mStudy Load (0.6ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 3 LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  Rendering layout layouts/application.html.erb
+  Rendering studies/show.html.erb within layouts/application
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/show.html.erb within layouts/application (Duration: 3.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | GC: 0.0ms)
+Completed 200 OK in 781ms (Views: 6.6ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/studies/study_apps" for ::1 at 2024-12-22 11:49:01 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"study_apps"}
+  [1m[36mStudy Load (86.5ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = NULL LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+Completed 404 Not Found in 817ms (ActiveRecord: 86.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Study with 'id'=study_apps):
+  
+app/controllers/studies_controller.rb:63:in `set_study'
+Started GET "/studies/study_apps" for ::1 at 2024-12-22 11:49:03 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"study_apps"}
+  [1m[36mStudy Load (0.6ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = NULL LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+Completed 404 Not Found in 723ms (ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Study with 'id'=study_apps):
+  
+app/controllers/studies_controller.rb:63:in `set_study'
+Started GET "/studies/study_apps" for ::1 at 2024-12-22 11:54:41 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"study_apps"}
+  [1m[36mStudy Load (38.7ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = NULL LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+Completed 404 Not Found in 741ms (ActiveRecord: 38.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Study with 'id'=study_apps):
+  
+app/controllers/studies_controller.rb:63:in `set_study'
+Started GET "/studies/study_apps" for ::1 at 2024-12-22 11:54:42 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"study_apps"}
+  [1m[36mStudy Load (0.7ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = NULL LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+Completed 404 Not Found in 702ms (ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Study with 'id'=study_apps):
+  
+app/controllers/studies_controller.rb:63:in `set_study'
+Started GET "/studies/study_apps" for ::1 at 2024-12-22 11:55:39 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"study_apps"}
+  [1m[36mStudy Load (1.1ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = NULL LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+Completed 404 Not Found in 1012ms (ActiveRecord: 1.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Study with 'id'=study_apps):
+  
+app/controllers/studies_controller.rb:63:in `set_study'
+Started GET "/studies/study_apps" for ::1 at 2024-12-22 11:55:41 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"study_apps"}
+  [1m[36mStudy Load (0.9ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = NULL LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+Completed 404 Not Found in 1005ms (ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Study with 'id'=study_apps):
+  
+app/controllers/studies_controller.rb:63:in `set_study'
+Started GET "/studies/3" for ::1 at 2024-12-22 11:56:19 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mStudy Load (2.3ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 3 LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  Rendering layout layouts/application.html.erb
+  Rendering studies/show.html.erb within layouts/application
+  Rendered studies/_study.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered studies/show.html.erb within layouts/application (Duration: 4.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | GC: 0.0ms)
+Completed 200 OK in 710ms (Views: 9.0ms | ActiveRecord: 2.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies/new" for ::1 at 2024-12-22 11:56:26 +0000
+Processing by StudiesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/new.html.erb within layouts/application
+  Rendered studies/_form.html.erb (Duration: 6.5ms | GC: 0.0ms)
+  Rendered studies/new.html.erb within layouts/application (Duration: 8.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | GC: 0.0ms)
+Completed 200 OK in 785ms (Views: 11.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 11:56:29 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.8ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 5.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | GC: 0.0ms)
+Completed 200 OK in 1781ms (Views: 7.4ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies/3" for ::1 at 2024-12-22 11:57:46 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"3"}
+Started GET "/studies/new" for ::1 at 2024-12-22 11:57:47 +0000
+Processing by StudiesController#new as HTML
+  [1m[36mStudy Load (0.8ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 3 LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  Rendering layout layouts/application.html.erb
+  Rendering studies/show.html.erb within layouts/application
+  Rendered studies/_study.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered studies/show.html.erb within layouts/application (Duration: 5.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | GC: 0.0ms)
+Completed 200 OK in 1093ms (Views: 13.6ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  Rendering layout layouts/application.html.erb
+  Rendering studies/new.html.erb within layouts/application
+  Rendered studies/_form.html.erb (Duration: 2.5ms | GC: 0.0ms)
+  Rendered studies/new.html.erb within layouts/application (Duration: 4.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | GC: 0.0ms)
+Completed 200 OK in 800ms (Views: 7.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.3ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 11:57:48 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.7ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 6.3ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | GC: 0.6ms)
+Completed 200 OK in 748ms (Views: 9.4ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 11:57:49 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.9ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 6.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | GC: 0.4ms)
+Completed 200 OK in 743ms (Views: 10.7ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/studies/study_apps" for ::1 at 2024-12-22 11:58:27 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"study_apps"}
+  [1m[36mStudy Load (0.7ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = NULL LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+Completed 404 Not Found in 691ms (ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Study with 'id'=study_apps):
+  
+app/controllers/studies_controller.rb:63:in `set_study'
+Started GET "/studies/study_apps" for ::1 at 2024-12-22 11:58:28 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"study_apps"}
+  [1m[36mStudy Load (0.6ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = NULL LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+Completed 404 Not Found in 700ms (ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Study with 'id'=study_apps):
+  
+app/controllers/studies_controller.rb:63:in `set_study'
+Started GET "/studies/study_apps" for ::1 at 2024-12-22 11:58:59 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"study_apps"}
+  [1m[36mStudy Load (0.7ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = NULL LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+Completed 404 Not Found in 686ms (ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Study with 'id'=study_apps):
+  
+app/controllers/studies_controller.rb:63:in `set_study'
+Started GET "/studies/study_apps" for ::1 at 2024-12-22 11:59:00 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"study_apps"}
+  [1m[36mStudy Load (1.0ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = NULL LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+Completed 404 Not Found in 723ms (ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Study with 'id'=study_apps):
+  
+app/controllers/studies_controller.rb:63:in `set_study'
+Started GET "/studies/study_apps" for ::1 at 2024-12-22 12:01:19 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"study_apps"}
+  [1m[36mStudy Load (0.7ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = NULL LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+Completed 404 Not Found in 917ms (ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Study with 'id'=study_apps):
+  
+app/controllers/studies_controller.rb:63:in `set_study'
+Started GET "/studies/study_apps" for ::1 at 2024-12-22 12:01:20 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"study_apps"}
+  [1m[36mStudy Load (0.6ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = NULL LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+Completed 404 Not Found in 757ms (ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Study with 'id'=study_apps):
+  
+app/controllers/studies_controller.rb:63:in `set_study'
+Started OPTIONS "/studies/study_apps" for ::1 at 2024-12-22 12:01:31 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies/study_apps"):
+  
+Started OPTIONS "/studies/study_apps" for ::1 at 2024-12-22 12:01:32 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies/study_apps"):
+  
+Started GET "/studies/study_apps" for ::1 at 2024-12-22 12:01:40 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"study_apps"}
+  [1m[36mStudy Load (0.9ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = NULL LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+Completed 404 Not Found in 682ms (ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Study with 'id'=study_apps):
+  
+app/controllers/studies_controller.rb:63:in `set_study'
+Started GET "/studies/study_apps" for ::1 at 2024-12-22 12:01:41 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"study_apps"}
+  [1m[36mStudy Load (0.8ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = NULL LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+Completed 404 Not Found in 791ms (ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Study with 'id'=study_apps):
+  
+app/controllers/studies_controller.rb:63:in `set_study'
+Started GET "/studies/new" for ::1 at 2024-12-22 12:12:18 +0000
+Processing by StudiesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/new.html.erb within layouts/application
+  Rendered studies/_form.html.erb (Duration: 4.7ms | GC: 0.0ms)
+  Rendered studies/new.html.erb within layouts/application (Duration: 26.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 29.1ms | GC: 0.0ms)
+Completed 200 OK in 757ms (Views: 30.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 12:12:19 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (71.1ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 82.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 84.0ms | GC: 0.0ms)
+Completed 200 OK in 725ms (Views: 14.0ms | ActiveRecord: 71.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies/3" for ::1 at 2024-12-22 12:12:23 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"3"}
+Started GET "/studies/new" for ::1 at 2024-12-22 12:12:24 +0000
+Processing by StudiesController#new as HTML
+  [1m[36mStudy Load (0.8ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 3 LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  Rendering layout layouts/application.html.erb
+  Rendering studies/show.html.erb within layouts/application
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/show.html.erb within layouts/application (Duration: 4.9ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | GC: 0.6ms)
+Completed 200 OK in 761ms (Views: 9.1ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+  Rendering layout layouts/application.html.erb
+  Rendering studies/new.html.erb within layouts/application
+  Rendered studies/_form.html.erb (Duration: 2.4ms | GC: 0.0ms)
+  Rendered studies/new.html.erb within layouts/application (Duration: 4.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | GC: 0.0ms)
+Completed 200 OK in 738ms (Views: 7.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started OPTIONS "/studies/study_apps" for ::1 at 2024-12-22 12:17:47 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies/study_apps"):
+  
+Started OPTIONS "/studies/study_apps" for ::1 at 2024-12-22 12:17:48 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies/study_apps"):
+  
+Started OPTIONS "/studies/study_apps" for ::1 at 2024-12-22 12:22:13 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies/study_apps"):
+  
+Started OPTIONS "/studies/study_apps" for ::1 at 2024-12-22 12:22:18 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies/study_apps"):
+  
+Started OPTIONS "/studies/study_apps" for ::1 at 2024-12-22 12:22:20 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies/study_apps"):
+  
+Started OPTIONS "/studies/study_apps" for ::1 at 2024-12-22 12:22:20 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies/study_apps"):
+  
+Started OPTIONS "/studies/study_apps" for ::1 at 2024-12-22 12:22:20 +0000
+Started OPTIONS "/studies/study_apps" for ::1 at 2024-12-22 12:22:21 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies/study_apps"):
+  
+Started OPTIONS "/studies/study_apps" for ::1 at 2024-12-22 12:22:21 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies/study_apps"):
+  
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies/study_apps"):
+  
+Started OPTIONS "/studies/study_apps" for ::1 at 2024-12-22 12:22:21 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies/study_apps"):
+  
+Started OPTIONS "/studies/study_apps" for ::1 at 2024-12-22 12:34:30 +0000
+Started OPTIONS "/studies/study_apps" for ::1 at 2024-12-22 12:34:30 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies/study_apps"):
+  
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies/study_apps"):
+  
+Started OPTIONS "/studies/study_apps" for ::1 at 2024-12-22 12:36:08 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies/study_apps"):
+  
+Started OPTIONS "/studies/study_apps" for ::1 at 2024-12-22 12:36:32 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies/study_apps"):
+  
+Started OPTIONS "/study_apps" for ::1 at 2024-12-22 12:38:55 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/study_apps"):
+  
+Started GET "/study_apps" for ::1 at 2024-12-22 12:40:47 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/study_apps"):
+  
+Started GET "/study_apps" for ::1 at 2024-12-22 12:40:48 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/study_apps"):
+  
+Started GET "/" for 127.0.0.1 at 2024-12-22 13:04:43 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (5.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='StudyApp'*/[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /root/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-8.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /root/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-8.0.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 3.1ms | GC: 0.5ms)
+Completed 200 OK in 1577ms (Views: 104.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.5ms)
+
+
+Started GET "/" for ::1 at 2024-12-22 13:05:15 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /root/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-8.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /root/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-8.0.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 200 OK in 673ms (Views: 1.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies/3" for ::1 at 2024-12-22 13:05:41 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mStudy Load (6.7ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 3 LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  Rendering layout layouts/application.html.erb
+  Rendering studies/show.html.erb within layouts/application
+  Rendered studies/_study.html.erb (Duration: 12.2ms | GC: 0.0ms)
+  Rendered studies/show.html.erb within layouts/application (Duration: 263.3ms | GC: 0.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 550.9ms | GC: 1.0ms)
+Completed 200 OK in 2593ms (Views: 626.8ms | ActiveRecord: 119.7ms (1 query, 0 cached) | GC: 5.1ms)
+
+
+Started GET "/studies/3/edit" for ::1 at 2024-12-22 13:05:47 +0000
+Processing by StudiesController#edit as HTML
+  Parameters: {"id"=>"3"}
+Started GET "/studies" for ::1 at 2024-12-22 13:05:47 +0000
+  [1m[36mStudy Load (0.7ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 3 LIMIT 1 /*action='edit',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/edit.html.erb within layouts/application
+  Rendered studies/_form.html.erb (Duration: 155.2ms | GC: 0.0ms)
+  Rendered studies/edit.html.erb within layouts/application (Duration: 215.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 220.4ms | GC: 0.0ms)
+Completed 200 OK in 979ms (Views: 222.4ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (1.9ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 18.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 22.2ms | GC: 0.0ms)
+Completed 200 OK in 939ms (Views: 22.3ms | ActiveRecord: 1.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2024-12-22 13:05:59 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /root/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-8.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /root/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-8.0.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.0ms | GC: 0.0ms)
+Completed 200 OK in 748ms (Views: 1.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 13:06:05 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (1.1ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 5.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | GC: 0.0ms)
+Completed 200 OK in 695ms (Views: 7.1ms | ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies/3" for ::1 at 2024-12-22 13:06:08 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mStudy Load (0.7ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 3 LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  Rendering layout layouts/application.html.erb
+  Rendering studies/show.html.erb within layouts/application
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/show.html.erb within layouts/application (Duration: 3.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | GC: 0.0ms)
+Completed 200 OK in 715ms (Views: 6.3ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started DELETE "/studies/3" for ::1 at 2024-12-22 13:06:10 +0000
+Processing by StudiesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"3"}
+  [1m[36mStudy Load (1.2ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 3 LIMIT 1 /*action='destroy',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='destroy',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:52:in `destroy'
+  [1m[36mStudy Destroy (2.8ms)[0m  [1m[31mDELETE FROM "studies" WHERE "studies"."id" = 3 /*action='destroy',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (31.6ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='destroy',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:52:in `destroy'
+Redirected to http://localhost:3000/studies
+Completed 303 See Other in 749ms (ActiveRecord: 36.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 13:06:11 +0000
+Processing by StudiesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (3.8ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/index.html.erb within layouts/application (Duration: 7.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | GC: 0.0ms)
+Completed 200 OK in 717ms (Views: 6.7ms | ActiveRecord: 3.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 13:06:34 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.4ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/index.html.erb within layouts/application (Duration: 4.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | GC: 0.0ms)
+Completed 200 OK in 751ms (Views: 7.4ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started OPTIONS "/studies/study_apps" for ::1 at 2024-12-22 13:07:12 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies/study_apps"):
+  
+Started OPTIONS "/studies/studies" for ::1 at 2024-12-22 13:10:45 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies/studies"):
+  
+Started OPTIONS "/studies/studies" for ::1 at 2024-12-22 13:37:40 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='StudyApp'*/[0m
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies/studies"):
+  
+Started GET "/studies" for ::1 at 2024-12-22 13:48:15 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/studies"):
+  
+Started GET "/studies" for ::1 at 2024-12-22 13:54:16 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='StudyApp'*/[0m
+  
+ActionController::RoutingError (No route matches [GET] "/studies"):
+  
+Started GET "/studies" for ::1 at 2024-12-22 13:55:01 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/studies"):
+  
+Started GET "/studies" for ::1 at 2024-12-22 13:55:26 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='StudyApp'*/[0m
+  
+ActionController::RoutingError (No route matches [GET] "/studies"):
+  
+Started GET "/studies" for ::1 at 2024-12-22 13:56:26 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='StudyApp'*/[0m
+  
+ActionController::RoutingError (No route matches [GET] "/studies"):
+  
+Started GET "/studies" for ::1 at 2024-12-22 13:58:16 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/studies"):
+  
+Started GET "/studies" for ::1 at 2024-12-22 13:58:19 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/studies"):
+  
+Started GET "/studies" for ::1 at 2024-12-22 13:58:35 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/studies"):
+  
+Started GET "/studies" for ::1 at 2024-12-22 13:59:08 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/studies"):
+  
+Started GET "/studies" for ::1 at 2024-12-22 13:59:08 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/studies"):
+  
+Started GET "/studies" for ::1 at 2024-12-22 13:59:18 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/studies"):
+  
+Started GET "/studies" for ::1 at 2024-12-22 13:59:54 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/studies"):
+  
+Started GET "/studies" for ::1 at 2024-12-22 14:11:01 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/studies"):
+  
+Started GET "/studies" for ::1 at 2024-12-22 14:15:13 +0000
+  
+Zeitwerk::NameError (expected file /mnt/c/Users/x20406212/studyApp/app/controllers/studies_controller.rb to define constant StudiesController, but didn't):
+  
+zeitwerk (2.7.1) lib/zeitwerk/loader/callbacks.rb:33:in `on_file_autoloaded'
+zeitwerk (2.7.1) lib/zeitwerk/core_ext/kernel.rb:27:in `require'
+activesupport (8.0.1) lib/active_support/inflector/methods.rb:290:in `const_get'
+activesupport (8.0.1) lib/active_support/inflector/methods.rb:290:in `constantize'
+activesupport (8.0.1) lib/active_support/core_ext/string/inflections.rb:74:in `constantize'
+actionpack (8.0.1) lib/action_dispatch/http/request.rb:99:in `controller_class_for'
+actionpack (8.0.1) lib/action_dispatch/request/utils.rb:108:in `action_encoding_template'
+actionpack (8.0.1) lib/action_dispatch/request/utils.rb:102:in `encode'
+actionpack (8.0.1) lib/action_dispatch/request/utils.rb:47:in `set_binary_encoding'
+actionpack (8.0.1) lib/action_dispatch/http/parameters.rb:70:in `path_parameters='
+actionpack (8.0.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (8.0.1) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (8.0.1) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (8.0.1) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (8.0.1) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (8.0.1) lib/action_dispatch/routing/route_set.rb:908:in `call'
+railties (8.0.1) lib/rails/engine/lazy_route_set.rb:68:in `call'
+rack (3.1.8) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.8) lib/rack/etag.rb:29:in `call'
+rack (3.1.8) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.8) lib/rack/head.rb:15:in `call'
+actionpack (8.0.1) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (8.0.1) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (8.0.1) lib/action_dispatch/middleware/cookies.rb:706:in `call'
+activerecord (8.0.1) lib/active_record/migration.rb:671:in `call'
+actionpack (8.0.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.1) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.1) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.1) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.1) lib/rails/engine.rb:535:in `call'
+puma (6.5.0) lib/puma/configuration.rb:279:in `call'
+puma (6.5.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.5.0) lib/puma/thread_pool.rb:389:in `with_force_shutdown'
+puma (6.5.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.5.0) lib/puma/server.rb:468:in `process_client'
+puma (6.5.0) lib/puma/server.rb:249:in `block in run'
+puma (6.5.0) lib/puma/thread_pool.rb:166:in `block in spawn_thread'
+Started GET "/studies" for ::1 at 2024-12-22 14:17:59 +0000
+  
+SyntaxError (/mnt/c/Users/x20406212/studyApp/app/controllers/studies_controller.rb:1: class/module name must be CONSTANT
+class studies_controller < ApplicationController
+      ^~~~~~~~~~~~~~~~~~
+):
+  
+app/controllers/studies_controller.rb:1: class/module name must be CONSTANT
+Started GET "/studies" for ::1 at 2024-12-22 14:18:08 +0000
+Processing by StudiesController#index as HTML
+  [1m[36mStudy Load (80.8ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:3:in `index'
+Completed 200 OK in 1794ms (Views: 5.8ms | ActiveRecord: 81.1ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 14:18:24 +0000
+Processing by StudiesController#index as HTML
+  [1m[36mStudy Load (0.6ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:3:in `index'
+Completed 200 OK in 766ms (Views: 2.4ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 14:20:21 +0000
+Started GET "/studies" for ::1 at 2024-12-22 14:20:21 +0000
+Started GET "/studies" for ::1 at 2024-12-22 14:20:21 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (4.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='StudyApp'*/[0m
+  
+ActionController::RoutingError (No route matches [GET] "/studies"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/studies"):
+  
+Processing by StudiesController#index as HTML
+Started GET "/studies" for ::1 at 2024-12-22 14:20:23 +0000
+Processing by StudiesController#index as HTML
+  [1m[36mStudy Load (87.8ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:3:in `index'
+Completed 200 OK in 3132ms (Views: 14.1ms | ActiveRecord: 87.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mStudy Load (0.6ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:3:in `index'
+Completed 200 OK in 2544ms (Views: 2.7ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 14:21:08 +0000
+Processing by StudiesController#index as HTML
+  [1m[36mStudy Load (73.4ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:3:in `index'
+Completed 200 OK in 799ms (Views: 6.2ms | ActiveRecord: 73.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started OPTIONS "/studies/studies" for ::1 at 2024-12-22 14:21:34 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies/studies"):
+  
+Started GET "/studies" for ::1 at 2024-12-22 14:32:31 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (28.3ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/index.html.erb within layouts/application (Duration: 39.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 186.0ms | GC: 0.5ms)
+Completed 200 OK in 766ms (Views: 206.3ms | ActiveRecord: 28.3ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/studies/new" for ::1 at 2024-12-22 14:32:33 +0000
+Processing by StudiesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/new.html.erb within layouts/application
+  Rendered studies/_form.html.erb (Duration: 56.4ms | GC: 0.8ms)
+  Rendered studies/new.html.erb within layouts/application (Duration: 96.6ms | GC: 0.8ms)
+  Rendered layout layouts/application.html.erb (Duration: 98.9ms | GC: 0.8ms)
+Completed 200 OK in 638ms (Views: 100.2ms | ActiveRecord: 2.8ms (0 queries, 0 cached) | GC: 1.7ms)
+
+
+Started OPTIONS "/studies/studies" for ::1 at 2024-12-22 14:32:37 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies/studies"):
+  
+Started OPTIONS "/studies/studies" for ::1 at 2024-12-22 14:32:56 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies/studies"):
+  
+Started GET "/studies" for ::1 at 2024-12-22 14:49:36 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (25.4ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/index.html.erb within layouts/application (Duration: 31.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 33.7ms | GC: 0.0ms)
+Completed 200 OK in 543ms (Views: 9.5ms | ActiveRecord: 25.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started OPTIONS "/studies/studies" for ::1 at 2024-12-22 14:49:44 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies/studies"):
+  
+Started OPTIONS "/studies/studies" for ::1 at 2024-12-22 14:50:28 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies/studies"):
+  
+Started OPTIONS "/studies/studies" for ::1 at 2024-12-22 14:50:59 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies/studies"):
+  
+Started OPTIONS "/studies/studies" for ::1 at 2024-12-22 14:51:03 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies/studies"):
+  
+Started OPTIONS "/studies/studies" for ::1 at 2024-12-22 14:52:08 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='StudyApp'*/[0m
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies/studies"):
+  
+Started GET "/studies/new" for ::1 at 2024-12-22 14:53:03 +0000
+Processing by StudiesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/new.html.erb within layouts/application
+  Rendered studies/_form.html.erb (Duration: 108.5ms | GC: 0.3ms)
+  Rendered studies/new.html.erb within layouts/application (Duration: 154.1ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 290.7ms | GC: 0.7ms)
+Completed 200 OK in 1769ms (Views: 342.4ms | ActiveRecord: 26.5ms (0 queries, 0 cached) | GC: 2.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 14:53:05 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (1.8ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/index.html.erb within layouts/application (Duration: 9.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | GC: 0.0ms)
+Completed 200 OK in 599ms (Views: 10.0ms | ActiveRecord: 1.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 14:53:55 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.5ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/index.html.erb within layouts/application (Duration: 2.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | GC: 0.0ms)
+Completed 200 OK in 461ms (Views: 4.4ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies/new" for ::1 at 2024-12-22 14:53:56 +0000
+Processing by StudiesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/new.html.erb within layouts/application
+  Rendered studies/_form.html.erb (Duration: 1.6ms | GC: 0.0ms)
+  Rendered studies/new.html.erb within layouts/application (Duration: 3.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | GC: 0.0ms)
+Completed 200 OK in 569ms (Views: 5.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies/new" for ::1 at 2024-12-22 14:54:06 +0000
+Processing by StudiesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/new.html.erb within layouts/application
+  Rendered studies/_form.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered studies/new.html.erb within layouts/application (Duration: 2.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | GC: 0.0ms)
+Completed 200 OK in 490ms (Views: 4.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started OPTIONS "/studies/studies" for ::1 at 2024-12-22 14:55:15 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies/studies"):
+  
+Started POST "/studies" for ::1 at 2024-12-22 14:56:47 +0000
+Processing by StudiesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "study"=>{"title"=>"", "started"=>"0", "completed"=>"0"}, "commit"=>"Create Study"}
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:27:in `block in create'
+  [1m[36mStudy Create (4.5ms)[0m  [1m[32mINSERT INTO "studies" ("title", "started", "completed", "created_at", "updated_at") VALUES ('', 0, 0, '2024-12-22 14:56:48.573528', '2024-12-22 14:56:48.573528') RETURNING "id" /*action='create',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/studies/4
+Completed 302 Found in 575ms (ActiveRecord: 12.0ms (1 query, 0 cached) | GC: 5.1ms)
+
+
+Started GET "/studies/4" for ::1 at 2024-12-22 14:56:48 +0000
+Processing by StudiesController#show as TURBO_STREAM
+  Parameters: {"id"=>"4"}
+  [1m[36mStudy Load (1.9ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 4 LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  Rendering layout layouts/application.html.erb
+  Rendering studies/show.html.erb within layouts/application
+  Rendered studies/_study.html.erb (Duration: 3.6ms | GC: 0.6ms)
+  Rendered studies/show.html.erb within layouts/application (Duration: 34.8ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 36.3ms | GC: 0.6ms)
+Completed 200 OK in 629ms (Views: 37.2ms | ActiveRecord: 1.9ms (1 query, 0 cached) | GC: 1.7ms)
+
+
+Started GET "/studies/4/edit" for ::1 at 2024-12-22 14:56:52 +0000
+Processing by StudiesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mStudy Load (0.4ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 4 LIMIT 1 /*action='edit',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  Rendering layout layouts/application.html.erb
+  Rendering studies/edit.html.erb within layouts/application
+  Rendered studies/_form.html.erb (Duration: 1.6ms | GC: 0.0ms)
+  Rendered studies/edit.html.erb within layouts/application (Duration: 7.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | GC: 0.0ms)
+Completed 200 OK in 561ms (Views: 10.7ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/studies/4" for ::1 at 2024-12-22 14:56:54 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mStudy Load (0.4ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 4 LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  Rendering layout layouts/application.html.erb
+  Rendering studies/show.html.erb within layouts/application
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/show.html.erb within layouts/application (Duration: 2.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | GC: 0.0ms)
+Completed 200 OK in 545ms (Views: 4.4ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 14:56:55 +0000
+Processing by StudiesController#index as HTML
+Started GET "/studies/4" for ::1 at 2024-12-22 14:56:55 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"4"}
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.4ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 5.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | GC: 0.0ms)
+Completed 200 OK in 539ms (Views: 9.0ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+  [1m[36mStudy Load (0.3ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 4 LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  Rendering layout layouts/application.html.erb
+  Rendering studies/show.html.erb within layouts/application
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/show.html.erb within layouts/application (Duration: 2.3ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | GC: 0.2ms)
+Completed 200 OK in 513ms (Views: 4.3ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 14:56:57 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.5ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 4.3ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | GC: 0.3ms)
+Completed 200 OK in 447ms (Views: 5.8ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 14:56:58 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.4ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 4.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | GC: 0.0ms)
+Completed 200 OK in 497ms (Views: 5.7ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 14:57:00 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.4ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 4.6ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | GC: 0.5ms)
+Completed 200 OK in 502ms (Views: 6.3ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/studies/4" for ::1 at 2024-12-22 14:57:03 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mStudy Load (0.3ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 4 LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  Rendering layout layouts/application.html.erb
+  Rendering studies/show.html.erb within layouts/application
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/show.html.erb within layouts/application (Duration: 2.3ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | GC: 0.4ms)
+Completed 200 OK in 444ms (Views: 4.6ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/studies/new" for ::1 at 2024-12-22 14:57:03 +0000
+Processing by StudiesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/new.html.erb within layouts/application
+  Rendered studies/_form.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  Rendered studies/new.html.erb within layouts/application (Duration: 2.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | GC: 0.0ms)
+Completed 200 OK in 398ms (Views: 4.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies/4" for ::1 at 2024-12-22 14:57:05 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mStudy Load (0.3ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 4 LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  Rendering layout layouts/application.html.erb
+  Rendering studies/show.html.erb within layouts/application
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/show.html.erb within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | GC: 0.1ms)
+Completed 200 OK in 489ms (Views: 4.0ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/studies/new" for ::1 at 2024-12-22 14:57:40 +0000
+Processing by StudiesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/new.html.erb within layouts/application
+  Rendered studies/_form.html.erb (Duration: 1.7ms | GC: 0.0ms)
+  Rendered studies/new.html.erb within layouts/application (Duration: 3.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | GC: 0.0ms)
+Completed 200 OK in 497ms (Views: 5.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/studies" for ::1 at 2024-12-22 14:57:43 +0000
+Processing by StudiesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "study"=>{"title"=>"", "started"=>"0", "completed"=>"0"}, "commit"=>"Create Study"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:27:in `block in create'
+  [1m[36mStudy Create (1.8ms)[0m  [1m[32mINSERT INTO "studies" ("title", "started", "completed", "created_at", "updated_at") VALUES ('', 0, 0, '2024-12-22 14:57:43.620557', '2024-12-22 14:57:43.620557') RETURNING "id" /*action='create',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/studies/5
+Completed 302 Found in 395ms (ActiveRecord: 2.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies/5" for ::1 at 2024-12-22 14:57:43 +0000
+Processing by StudiesController#show as TURBO_STREAM
+  Parameters: {"id"=>"5"}
+  [1m[36mStudy Load (1.2ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 5 LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  Rendering layout layouts/application.html.erb
+  Rendering studies/show.html.erb within layouts/application
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/show.html.erb within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | GC: 0.0ms)
+Completed 200 OK in 468ms (Views: 3.8ms | ActiveRecord: 1.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies/5/edit" for ::1 at 2024-12-22 14:57:46 +0000
+Processing by StudiesController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mStudy Load (0.3ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 5 LIMIT 1 /*action='edit',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  Rendering layout layouts/application.html.erb
+  Rendering studies/edit.html.erb within layouts/application
+  Rendered studies/_form.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered studies/edit.html.erb within layouts/application (Duration: 2.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | GC: 0.0ms)
+Completed 200 OK in 501ms (Views: 5.0ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started OPTIONS "/studies/studies" for ::1 at 2024-12-22 15:54:14 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies/studies"):
+  
+Started OPTIONS "/studies/studies" for ::1 at 2024-12-22 15:54:18 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies/studies"):
+  
+Started OPTIONS "/studies/studies" for ::1 at 2024-12-22 18:03:12 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies/studies"):
+  
+Started OPTIONS "/studies/studies" for ::1 at 2024-12-22 18:03:34 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies/studies"):
+  
+Started OPTIONS "/studies/studies" for ::1 at 2024-12-22 18:06:57 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies/studies"):
+  
+Started GET "/" for ::1 at 2024-12-22 18:07:20 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /root/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-8.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /root/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-8.0.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.9ms | GC: 0.5ms)
+Completed 200 OK in 769ms (Views: 3.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/" for ::1 at 2024-12-22 18:08:00 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /root/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-8.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /root/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-8.0.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.4ms | GC: 0.0ms)
+Completed 200 OK in 801ms (Views: 3.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2024-12-22 18:09:49 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /root/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-8.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /root/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-8.0.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 753ms (Views: 1.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 18:09:54 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (46.4ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 58.4ms | GC: 1.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 61.4ms | GC: 1.4ms)
+Completed 200 OK in 860ms (Views: 16.4ms | ActiveRecord: 46.4ms (1 query, 0 cached) | GC: 1.4ms)
+
+
+Started GET "/studies/4" for ::1 at 2024-12-22 18:09:58 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mStudy Load (0.7ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 4 LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  Rendering layout layouts/application.html.erb
+  Rendering studies/show.html.erb within layouts/application
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/show.html.erb within layouts/application (Duration: 4.0ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | GC: 0.6ms)
+Completed 200 OK in 780ms (Views: 8.2ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/studies/4" for ::1 at 2024-12-22 18:09:59 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mStudy Load (0.8ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 4 LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  Rendering layout layouts/application.html.erb
+  Rendering studies/show.html.erb within layouts/application
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/show.html.erb within layouts/application (Duration: 3.1ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | GC: 0.3ms)
+Completed 200 OK in 830ms (Views: 7.7ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started DELETE "/studies/4" for ::1 at 2024-12-22 18:10:03 +0000
+Processing by StudiesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"4"}
+  [1m[36mStudy Load (0.7ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 4 LIMIT 1 /*action='destroy',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='destroy',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:52:in `destroy'
+  [1m[36mStudy Destroy (3.6ms)[0m  [1m[31mDELETE FROM "studies" WHERE "studies"."id" = 4 /*action='destroy',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='destroy',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:52:in `destroy'
+Redirected to http://localhost:3000/studies
+Completed 303 See Other in 806ms (ActiveRecord: 9.6ms (2 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 18:10:04 +0000
+Processing by StudiesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (5.1ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 13.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | GC: 0.0ms)
+Completed 200 OK in 957ms (Views: 12.3ms | ActiveRecord: 5.1ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/studies/5" for ::1 at 2024-12-22 18:10:26 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mStudy Load (0.7ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 5 LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  Rendering layout layouts/application.html.erb
+  Rendering studies/show.html.erb within layouts/application
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/show.html.erb within layouts/application (Duration: 2.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | GC: 0.0ms)
+Completed 200 OK in 934ms (Views: 6.2ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started DELETE "/studies/5" for ::1 at 2024-12-22 18:10:36 +0000
+Processing by StudiesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"5"}
+  [1m[36mStudy Load (0.6ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 5 LIMIT 1 /*action='destroy',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='destroy',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:52:in `destroy'
+  [1m[36mStudy Destroy (3.6ms)[0m  [1m[31mDELETE FROM "studies" WHERE "studies"."id" = 5 /*action='destroy',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='destroy',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:52:in `destroy'
+Redirected to http://localhost:3000/studies
+Completed 303 See Other in 910ms (ActiveRecord: 5.8ms (2 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 18:10:37 +0000
+Processing by StudiesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (1.8ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/index.html.erb within layouts/application (Duration: 6.0ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | GC: 0.4ms)
+Completed 200 OK in 798ms (Views: 7.7ms | ActiveRecord: 1.8ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 18:16:44 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (30.0ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/index.html.erb within layouts/application (Duration: 36.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 39.0ms | GC: 0.0ms)
+Completed 200 OK in 953ms (Views: 10.2ms | ActiveRecord: 30.0ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 18:16:45 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.9ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/index.html.erb within layouts/application (Duration: 5.2ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | GC: 0.6ms)
+Completed 200 OK in 803ms (Views: 8.0ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 18:19:02 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.9ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/index.html.erb within layouts/application (Duration: 5.7ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | GC: 0.4ms)
+Completed 200 OK in 738ms (Views: 8.2ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 18:19:03 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (1.2ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/index.html.erb within layouts/application (Duration: 6.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | GC: 0.0ms)
+Completed 200 OK in 844ms (Views: 8.9ms | ActiveRecord: 1.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started OPTIONS "/studies" for ::1 at 2024-12-22 18:20:31 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies"):
+  
+Started GET "/studies" for ::1 at 2024-12-22 18:22:24 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (1.4ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/index.html.erb within layouts/application (Duration: 7.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | GC: 0.0ms)
+Completed 200 OK in 835ms (Views: 10.5ms | ActiveRecord: 1.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 18:22:25 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.9ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/index.html.erb within layouts/application (Duration: 4.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | GC: 0.0ms)
+Completed 200 OK in 744ms (Views: 7.0ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies/new" for ::1 at 2024-12-22 18:23:15 +0000
+Processing by StudiesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/new.html.erb within layouts/application
+  Rendered studies/_form.html.erb (Duration: 4.0ms | GC: 0.0ms)
+  Rendered studies/new.html.erb within layouts/application (Duration: 6.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | GC: 0.0ms)
+Completed 200 OK in 748ms (Views: 9.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 18:23:16 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (1.5ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/index.html.erb within layouts/application (Duration: 6.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | GC: 0.3ms)
+Completed 200 OK in 729ms (Views: 8.6ms | ActiveRecord: 1.5ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 18:23:17 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (1.2ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/index.html.erb within layouts/application (Duration: 7.3ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | GC: 0.2ms)
+Completed 200 OK in 713ms (Views: 10.0ms | ActiveRecord: 1.2ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 18:23:29 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.7ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/index.html.erb within layouts/application (Duration: 3.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | GC: 0.0ms)
+Completed 200 OK in 722ms (Views: 6.4ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 18:23:29 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.9ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/index.html.erb within layouts/application (Duration: 4.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | GC: 0.0ms)
+Completed 200 OK in 731ms (Views: 6.6ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 18:23:31 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.6ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/index.html.erb within layouts/application (Duration: 4.0ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | GC: 0.2ms)
+Completed 200 OK in 618ms (Views: 6.4ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 18:23:31 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.9ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/index.html.erb within layouts/application (Duration: 4.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | GC: 0.0ms)
+Completed 200 OK in 629ms (Views: 6.4ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/studies" for ::1 at 2024-12-22 18:27:13 +0000
+Processing by StudiesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "study"=>{"title"=>"CA1", "started"=>"0", "completed"=>"0"}, "commit"=>"Create Study"}
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:27:in `block in create'
+  [1m[36mStudy Create (6.4ms)[0m  [1m[32mINSERT INTO "studies" ("title", "started", "completed", "created_at", "updated_at") VALUES ('CA1', 0, 0, '2024-12-22 18:27:14.032226', '2024-12-22 18:27:14.032226') RETURNING "id" /*action='create',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (27.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/studies/6
+Completed 302 Found in 737ms (ActiveRecord: 34.4ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/studies/6" for ::1 at 2024-12-22 18:27:14 +0000
+Processing by StudiesController#show as TURBO_STREAM
+  Parameters: {"id"=>"6"}
+  [1m[36mStudy Load (3.0ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 6 LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  Rendering layout layouts/application.html.erb
+  Rendering studies/show.html.erb within layouts/application
+  Rendered studies/_study.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered studies/show.html.erb within layouts/application (Duration: 5.4ms | GC: 0.8ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | GC: 0.8ms)
+Completed 200 OK in 723ms (Views: 9.9ms | ActiveRecord: 3.0ms (1 query, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 18:34:55 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (56.7ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 64.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 66.3ms | GC: 0.0ms)
+Completed 200 OK in 731ms (Views: 10.5ms | ActiveRecord: 56.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies/6" for ::1 at 2024-12-22 18:34:56 +0000
+Started GET "/studies/new" for ::1 at 2024-12-22 18:34:57 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"6"}
+Processing by StudiesController#new as HTML
+  [1m[36mStudy Load (0.8ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 6 LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  Rendering layout layouts/application.html.erb
+  Rendering studies/show.html.erb within layouts/application
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/show.html.erb within layouts/application (Duration: 4.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | GC: 0.0ms)
+Completed 200 OK in 545ms (Views: 8.3ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  Rendering layout layouts/application.html.erb
+  Rendering studies/new.html.erb within layouts/application
+  Rendered studies/_form.html.erb (Duration: 4.2ms | GC: 0.0ms)
+  Rendered studies/new.html.erb within layouts/application (Duration: 5.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | GC: 0.0ms)
+Completed 200 OK in 529ms (Views: 8.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies/new" for ::1 at 2024-12-22 18:34:58 +0000
+Processing by StudiesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/new.html.erb within layouts/application
+  Rendered studies/_form.html.erb (Duration: 1.9ms | GC: 0.0ms)
+  Rendered studies/new.html.erb within layouts/application (Duration: 3.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | GC: 0.0ms)
+Completed 200 OK in 650ms (Views: 6.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 18:38:52 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.8ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 6.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | GC: 0.0ms)
+Completed 200 OK in 624ms (Views: 10.3ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 18:38:53 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (1.2ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 6.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | GC: 5.9ms)
+Completed 200 OK in 627ms (Views: 14.0ms | ActiveRecord: 1.2ms (1 query, 0 cached) | GC: 5.9ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 18:39:05 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (1.2ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 7.6ms | GC: 0.9ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | GC: 0.9ms)
+Completed 200 OK in 641ms (Views: 9.1ms | ActiveRecord: 1.2ms (1 query, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 18:39:05 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (1.9ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 5.5ms | GC: 1.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | GC: 1.0ms)
+Completed 200 OK in 655ms (Views: 7.2ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 18:39:06 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.8ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 6.0ms | GC: 1.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | GC: 1.0ms)
+Completed 200 OK in 664ms (Views: 8.1ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 18:39:07 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (1.0ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 5.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | GC: 0.7ms)
+Completed 200 OK in 732ms (Views: 9.1ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 18:39:33 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (1.8ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 13.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 18.0ms | GC: 0.0ms)
+Completed 200 OK in 701ms (Views: 22.9ms | ActiveRecord: 1.8ms (1 query, 0 cached) | GC: 4.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 18:39:34 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (1.4ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 7.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | GC: 1.2ms)
+Completed 200 OK in 702ms (Views: 10.7ms | ActiveRecord: 1.3ms (1 query, 0 cached) | GC: 1.2ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 18:39:45 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.8ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 6.5ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | GC: 0.6ms)
+Completed 200 OK in 672ms (Views: 11.2ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+Started OPTIONS "/studies" for ::1 at 2024-12-22 18:49:50 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies"):
+  
+Started GET "/studies" for ::1 at 2024-12-22 18:50:13 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (31.4ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 36.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 38.2ms | GC: 0.0ms)
+Completed 200 OK in 536ms (Views: 7.8ms | ActiveRecord: 31.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 18:50:13 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.7ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 4.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | GC: 0.0ms)
+Completed 200 OK in 569ms (Views: 6.5ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies/new" for ::1 at 2024-12-22 18:52:02 +0000
+Processing by StudiesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/new.html.erb within layouts/application
+  Rendered studies/_form.html.erb (Duration: 3.9ms | GC: 0.0ms)
+  Rendered studies/new.html.erb within layouts/application (Duration: 6.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | GC: 0.0ms)
+Completed 200 OK in 770ms (Views: 9.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies/new" for ::1 at 2024-12-22 18:52:03 +0000
+Processing by StudiesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/new.html.erb within layouts/application
+  Rendered studies/_form.html.erb (Duration: 1.8ms | GC: 0.0ms)
+  Rendered studies/new.html.erb within layouts/application (Duration: 3.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | GC: 0.0ms)
+Completed 200 OK in 658ms (Views: 5.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/studies" for ::1 at 2024-12-22 18:52:16 +0000
+Processing by StudiesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "study"=>{"title"=>"CA1", "started"=>"0", "completed"=>"1"}, "commit"=>"Create Study"}
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:27:in `block in create'
+  [1m[36mStudy Create (3.5ms)[0m  [1m[32mINSERT INTO "studies" ("title", "started", "completed", "created_at", "updated_at") VALUES ('CA1', 0, 1, '2024-12-22 18:52:17.428567', '2024-12-22 18:52:17.428567') RETURNING "id" /*action='create',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (25.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/studies/7
+Completed 302 Found in 680ms (ActiveRecord: 29.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies/7" for ::1 at 2024-12-22 18:52:17 +0000
+Processing by StudiesController#show as TURBO_STREAM
+  Parameters: {"id"=>"7"}
+  [1m[36mStudy Load (2.0ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 7 LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  Rendering layout layouts/application.html.erb
+  Rendering studies/show.html.erb within layouts/application
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/show.html.erb within layouts/application (Duration: 3.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | GC: 0.0ms)
+Completed 200 OK in 648ms (Views: 7.1ms | ActiveRecord: 2.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies/7/edit" for ::1 at 2024-12-22 18:52:38 +0000
+Processing by StudiesController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mStudy Load (0.4ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 7 LIMIT 1 /*action='edit',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  Rendering layout layouts/application.html.erb
+  Rendering studies/edit.html.erb within layouts/application
+  Rendered studies/_form.html.erb (Duration: 1.8ms | GC: 0.0ms)
+  Rendered studies/edit.html.erb within layouts/application (Duration: 4.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | GC: 2.5ms)
+Completed 200 OK in 632ms (Views: 10.4ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 2.5ms)
+
+
+Started GET "/studies/7" for ::1 at 2024-12-22 18:52:49 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"7"}
+Started GET "/studies" for ::1 at 2024-12-22 18:52:49 +0000
+  [1m[36mStudy Load (0.5ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 7 LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  Rendering layout layouts/application.html.erb
+  Rendering studies/show.html.erb within layouts/application
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/show.html.erb within layouts/application (Duration: 3.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | GC: 0.0ms)
+Completed 200 OK in 729ms (Views: 6.8ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.8ms)
+
+
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.8ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 6.7ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | GC: 0.6ms)
+Completed 200 OK in 656ms (Views: 8.5ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/studies/7" for ::1 at 2024-12-22 18:52:51 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mStudy Load (0.8ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 7 LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  Rendering layout layouts/application.html.erb
+  Rendering studies/show.html.erb within layouts/application
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/show.html.erb within layouts/application (Duration: 2.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | GC: 0.0ms)
+Completed 200 OK in 722ms (Views: 5.2ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 18:53:11 +0000
+Processing by StudiesController#index as HTML
+Started GET "/studies/7/edit" for ::1 at 2024-12-22 18:53:11 +0000
+Processing by StudiesController#edit as HTML
+  Parameters: {"id"=>"7"}
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.8ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 10.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | GC: 0.0ms)
+Completed 200 OK in 771ms (Views: 13.7ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.7ms)
+
+
+  [1m[36mStudy Load (0.7ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 7 LIMIT 1 /*action='edit',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  Rendering layout layouts/application.html.erb
+  Rendering studies/edit.html.erb within layouts/application
+  Rendered studies/_form.html.erb (Duration: 1.9ms | GC: 0.0ms)
+  Rendered studies/edit.html.erb within layouts/application (Duration: 3.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | GC: 0.0ms)
+Completed 200 OK in 771ms (Views: 6.7ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/studies/7/edit" for ::1 at 2024-12-22 18:53:18 +0000
+Processing by StudiesController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mStudy Load (0.7ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 7 LIMIT 1 /*action='edit',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  Rendering layout layouts/application.html.erb
+  Rendering studies/edit.html.erb within layouts/application
+  Rendered studies/_form.html.erb (Duration: 1.6ms | GC: 0.0ms)
+  Rendered studies/edit.html.erb within layouts/application (Duration: 3.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | GC: 0.2ms)
+Completed 200 OK in 726ms (Views: 8.0ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/studies/7" for ::1 at 2024-12-22 18:53:32 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mStudy Load (0.5ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 7 LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  Rendering layout layouts/application.html.erb
+  Rendering studies/show.html.erb within layouts/application
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/show.html.erb within layouts/application (Duration: 3.2ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | GC: 0.3ms)
+Completed 200 OK in 666ms (Views: 6.2ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 18:53:35 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.5ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 5.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | GC: 0.6ms)
+Completed 200 OK in 727ms (Views: 9.2ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 18:53:44 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.5ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 5.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | GC: 0.0ms)
+Completed 200 OK in 685ms (Views: 7.3ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 18:53:45 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.5ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 5.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | GC: 0.0ms)
+Completed 200 OK in 716ms (Views: 7.9ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 18:53:57 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.5ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 5.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | GC: 0.0ms)
+Completed 200 OK in 706ms (Views: 8.1ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 18:53:58 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.5ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 6.5ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | GC: 0.5ms)
+Completed 200 OK in 653ms (Views: 8.3ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 18:54:44 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.8ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 9.8ms | GC: 0.8ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | GC: 0.8ms)
+Completed 200 OK in 727ms (Views: 14.7ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 18:54:45 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.5ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 5.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | GC: 0.0ms)
+Completed 200 OK in 680ms (Views: 7.9ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies/new" for ::1 at 2024-12-22 18:55:13 +0000
+Processing by StudiesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/new.html.erb within layouts/application
+  Rendered studies/_form.html.erb (Duration: 3.1ms | GC: 0.0ms)
+  Rendered studies/new.html.erb within layouts/application (Duration: 4.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | GC: 0.0ms)
+Completed 200 OK in 646ms (Views: 7.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/studies" for ::1 at 2024-12-22 18:57:52 +0000
+Processing by StudiesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "study"=>{"title"=>"", "started"=>"0", "completed"=>"0"}, "commit"=>"Create Study"}
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:27:in `block in create'
+  [1m[36mStudy Create (4.7ms)[0m  [1m[32mINSERT INTO "studies" ("title", "started", "completed", "created_at", "updated_at") VALUES ('', 0, 0, '2024-12-22 18:57:53.468757', '2024-12-22 18:57:53.468757') RETURNING "id" /*action='create',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/studies/8
+Completed 302 Found in 676ms (ActiveRecord: 6.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies/8" for ::1 at 2024-12-22 18:57:53 +0000
+Processing by StudiesController#show as TURBO_STREAM
+  Parameters: {"id"=>"8"}
+  [1m[36mStudy Load (1.3ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 8 LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  Rendering layout layouts/application.html.erb
+  Rendering studies/show.html.erb within layouts/application
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/show.html.erb within layouts/application (Duration: 2.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | GC: 0.0ms)
+Completed 200 OK in 699ms (Views: 6.7ms | ActiveRecord: 1.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 19:02:23 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (1.0ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 10.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | GC: 0.0ms)
+Completed 200 OK in 658ms (Views: 13.8ms | ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 19:02:24 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (1.1ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 7.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | GC: 1.5ms)
+Completed 200 OK in 643ms (Views: 11.1ms | ActiveRecord: 1.1ms (1 query, 0 cached) | GC: 1.5ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 19:02:37 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.6ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 8.0ms | GC: 1.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | GC: 1.5ms)
+Completed 200 OK in 655ms (Views: 10.0ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 1.5ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 19:02:38 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.5ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 7.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | GC: 0.6ms)
+Completed 200 OK in 690ms (Views: 10.6ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+Started OPTIONS "/studies" for ::1 at 2024-12-22 19:12:48 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies"):
+  
+Started GET "/studies" for ::1 at 2024-12-22 19:12:50 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (34.6ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 42.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 44.4ms | GC: 0.0ms)
+Completed 200 OK in 698ms (Views: 10.8ms | ActiveRecord: 34.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-22 19:12:51 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.8ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 6.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | GC: 0.0ms)
+Completed 200 OK in 661ms (Views: 9.1ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started OPTIONS "/studies" for ::1 at 2024-12-22 19:12:53 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies"):
+  
+Started OPTIONS "/studies" for ::1 at 2024-12-22 19:12:54 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies"):
+  
+Started OPTIONS "/studies" for ::1 at 2024-12-22 19:12:55 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies"):
+  
+Started OPTIONS "/studies" for ::1 at 2024-12-22 19:12:56 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies"):
+  
+Started OPTIONS "/studies" for ::1 at 2024-12-22 19:12:56 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies"):
+  
+Started OPTIONS "/studies" for ::1 at 2024-12-22 19:12:57 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies"):
+  
+Started OPTIONS "/studies" for ::1 at 2024-12-22 19:12:58 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies"):
+  
+Started OPTIONS "/studies" for ::1 at 2024-12-22 19:12:59 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies"):
+  
+Started OPTIONS "/studies" for ::1 at 2024-12-22 19:13:01 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies"):
+  
+Started OPTIONS "/studies" for ::1 at 2024-12-22 19:13:02 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies"):
+  
+Started OPTIONS "/studies" for ::1 at 2024-12-22 19:13:03 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies"):
+  
+Started OPTIONS "/studies" for ::1 at 2024-12-22 19:13:03 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies"):
+  
+Started GET "/studies" for ::1 at 2024-12-24 20:37:05 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (47.9ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 66.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 72.5ms | GC: 0.0ms)
+Completed 200 OK in 801ms (Views: 27.5ms | ActiveRecord: 47.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-24 20:37:06 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.8ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 7.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | GC: 0.0ms)
+Completed 200 OK in 714ms (Views: 9.1ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-24 21:06:21 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (103.2ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 116.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 120.8ms | GC: 0.0ms)
+Completed 200 OK in 830ms (Views: 19.7ms | ActiveRecord: 103.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-24 21:06:22 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.8ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 8.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | GC: 0.0ms)
+Completed 200 OK in 673ms (Views: 12.2ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-24 21:07:08 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.7ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 8.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | GC: 0.0ms)
+Completed 200 OK in 828ms (Views: 11.8ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-24 21:07:09 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (1.0ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 9.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | GC: 0.0ms)
+Completed 200 OK in 721ms (Views: 13.1ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started OPTIONS "/studies" for ::1 at 2024-12-24 21:19:56 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies"):
+  
+Started OPTIONS "/studies" for ::1 at 2024-12-24 21:32:28 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies"):
+  
+Started OPTIONS "/studies" for ::1 at 2024-12-24 21:32:30 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies"):
+  
+Started GET "/studies" for ::1 at 2024-12-26 16:22:51 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (59.4ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 105.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 117.7ms | GC: 0.0ms)
+Completed 200 OK in 922ms (Views: 65.3ms | ActiveRecord: 59.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-26 16:22:53 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.9ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 13.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | GC: 0.0ms)
+Completed 200 OK in 728ms (Views: 17.9ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-26 16:27:35 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (1.4ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 42.3ms | GC: 4.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 45.9ms | GC: 4.7ms)
+Completed 200 OK in 753ms (Views: 45.9ms | ActiveRecord: 1.4ms (1 query, 0 cached) | GC: 4.7ms)
+
+
+Started GET "/studies/7" for ::1 at 2024-12-26 16:27:37 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"7"}
+Started GET "/studies/new" for ::1 at 2024-12-26 16:27:38 +0000
+Processing by StudiesController#new as HTML
+  [1m[36mStudy Load (19.4ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 7 LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  Rendering layout layouts/application.html.erb
+  Rendering studies/show.html.erb within layouts/application
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/show.html.erb within layouts/application (Duration: 8.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | GC: 0.0ms)
+Completed 200 OK in 888ms (Views: 12.5ms | ActiveRecord: 19.4ms (1 query, 0 cached) | GC: 2.7ms)
+
+
+  Rendering layout layouts/application.html.erb
+  Rendering studies/new.html.erb within layouts/application
+  Rendered studies/_form.html.erb (Duration: 17.6ms | GC: 4.0ms)
+  Rendered studies/new.html.erb within layouts/application (Duration: 19.9ms | GC: 4.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 24.1ms | GC: 4.0ms)
+Completed 200 OK in 829ms (Views: 25.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 6.7ms)
+
+
+Started POST "/studies" for ::1 at 2024-12-26 16:27:47 +0000
+Processing by StudiesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "study"=>{"title"=>"test", "started"=>"1", "completed"=>"0"}, "commit"=>"Create Study"}
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:27:in `block in create'
+  [1m[36mStudy Create (5.8ms)[0m  [1m[32mINSERT INTO "studies" ("title", "started", "completed", "created_at", "updated_at") VALUES ('test', 1, 0, '2024-12-26 16:27:48.540114', '2024-12-26 16:27:48.540114') RETURNING "id" /*action='create',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (7.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/studies/9
+Completed 302 Found in 787ms (ActiveRecord: 13.9ms (1 query, 0 cached) | GC: 3.0ms)
+
+
+Started GET "/studies/9" for ::1 at 2024-12-26 16:27:48 +0000
+Processing by StudiesController#show as TURBO_STREAM
+  Parameters: {"id"=>"9"}
+  [1m[36mStudy Load (2.3ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 9 LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  Rendering layout layouts/application.html.erb
+  Rendering studies/show.html.erb within layouts/application
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/show.html.erb within layouts/application (Duration: 4.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | GC: 0.0ms)
+Completed 200 OK in 714ms (Views: 8.3ms | ActiveRecord: 2.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started OPTIONS "/studies" for ::1 at 2024-12-26 16:31:22 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies"):
+  
+Started GET "/studies" for ::1 at 2024-12-26 16:35:28 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (70.7ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 81.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 83.8ms | GC: 0.0ms)
+Completed 200 OK in 784ms (Views: 14.4ms | ActiveRecord: 70.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies/9/edit" for ::1 at 2024-12-26 16:35:31 +0000
+Processing by StudiesController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mStudy Load (0.9ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 9 LIMIT 1 /*action='edit',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  Rendering layout layouts/application.html.erb
+  Rendering studies/edit.html.erb within layouts/application
+  Rendered studies/_form.html.erb (Duration: 2.9ms | GC: 0.0ms)
+  Rendered studies/edit.html.erb within layouts/application (Duration: 5.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | GC: 0.0ms)
+Completed 200 OK in 706ms (Views: 8.3ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-26 16:35:32 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (1.0ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 8.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | GC: 0.0ms)
+Completed 200 OK in 744ms (Views: 11.1ms | ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-26 16:46:45 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (154.3ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 165.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 167.6ms | GC: 0.0ms)
+Completed 200 OK in 1045ms (Views: 14.7ms | ActiveRecord: 154.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-26 16:46:47 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (1.2ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 8.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | GC: 0.0ms)
+Completed 200 OK in 828ms (Views: 10.1ms | ActiveRecord: 1.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies/9/edit" for ::1 at 2024-12-26 16:46:49 +0000
+Processing by StudiesController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mStudy Load (0.6ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 9 LIMIT 1 /*action='edit',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  Rendering layout layouts/application.html.erb
+  Rendering studies/edit.html.erb within layouts/application
+  Rendered studies/_form.html.erb (Duration: 3.8ms | GC: 0.0ms)
+  Rendered studies/edit.html.erb within layouts/application (Duration: 6.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | GC: 0.0ms)
+Completed 200 OK in 691ms (Views: 9.7ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-26 17:03:00 +0000
+Processing by StudiesController#index as HTML
+Started GET "/studies/9/edit" for ::1 at 2024-12-26 17:03:00 +0000
+Processing by StudiesController#edit as HTML
+  Parameters: {"id"=>"9"}
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (33.7ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 47.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 53.8ms | GC: 1.6ms)
+Completed 200 OK in 785ms (Views: 22.0ms | ActiveRecord: 33.6ms (1 query, 0 cached) | GC: 3.3ms)
+
+
+  [1m[36mStudy Load (0.6ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 9 LIMIT 1 /*action='edit',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  Rendering layout layouts/application.html.erb
+  Rendering studies/edit.html.erb within layouts/application
+  Rendered studies/_form.html.erb (Duration: 2.2ms | GC: 0.0ms)
+  Rendered studies/edit.html.erb within layouts/application (Duration: 3.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | GC: 0.0ms)
+Completed 200 OK in 727ms (Views: 6.8ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 1.6ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-26 18:41:26 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (39.9ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 51.6ms | GC: 2.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 54.7ms | GC: 2.0ms)
+Completed 200 OK in 806ms (Views: 16.4ms | ActiveRecord: 39.8ms (1 query, 0 cached) | GC: 2.0ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-26 18:41:27 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.9ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 11.5ms | GC: 1.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | GC: 1.3ms)
+Completed 200 OK in 712ms (Views: 13.7ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 1.3ms)
+
+
+Started OPTIONS "/studies" for ::1 at 2024-12-26 18:41:38 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies"):
+  
+Started OPTIONS "/studies" for ::1 at 2024-12-26 18:41:42 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies"):
+  
+Started OPTIONS "/studies" for ::1 at 2024-12-26 18:41:43 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies"):
+  
+Started OPTIONS "/studies" for ::1 at 2024-12-26 18:41:46 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies"):
+  
+Started OPTIONS "/studies" for ::1 at 2024-12-26 18:41:53 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies"):
+  
+Started OPTIONS "/studies" for ::1 at 2024-12-26 18:41:53 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies"):
+  
+Started OPTIONS "/studies" for ::1 at 2024-12-26 18:41:54 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies"):
+  
+Started OPTIONS "/studies" for ::1 at 2024-12-26 18:41:56 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies"):
+  
+Started OPTIONS "/studies" for ::1 at 2024-12-26 18:41:56 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies"):
+  
+Started OPTIONS "/studies" for ::1 at 2024-12-26 18:41:57 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies"):
+  
+Started OPTIONS "/studies" for ::1 at 2024-12-26 18:45:29 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies"):
+  
+Started GET "/studies" for ::1 at 2024-12-26 19:09:43 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (53.0ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 61.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 63.7ms | GC: 0.0ms)
+Completed 200 OK in 597ms (Views: 11.7ms | ActiveRecord: 53.0ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-26 19:09:44 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (0.6ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 8.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | GC: 0.0ms)
+Completed 200 OK in 583ms (Views: 10.7ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started OPTIONS "/studies" for ::1 at 2024-12-26 19:12:47 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies"):
+  
+Started OPTIONS "/studies" for ::1 at 2024-12-26 19:12:48 +0000
+Started OPTIONS "/studies" for ::1 at 2024-12-26 19:12:48 +0000
+Started OPTIONS "/studies" for ::1 at 2024-12-26 19:12:49 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies"):
+  
+Started OPTIONS "/studies" for ::1 at 2024-12-26 19:12:49 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies"):
+  
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies"):
+  
+Started OPTIONS "/studies" for ::1 at 2024-12-26 19:12:49 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies"):
+  
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies"):
+  
+Started OPTIONS "/studies" for ::1 at 2024-12-26 19:12:50 +0000
+Started OPTIONS "/studies" for ::1 at 2024-12-26 19:12:50 +0000
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies"):
+  
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/studies"):
+  
+Started GET "/studies" for ::1 at 2024-12-26 19:13:04 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (1.2ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 10.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | GC: 0.0ms)
+Completed 200 OK in 677ms (Views: 12.4ms | ActiveRecord: 1.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/studies/new" for ::1 at 2024-12-26 19:13:07 +0000
+Processing by StudiesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/new.html.erb within layouts/application
+  Rendered studies/_form.html.erb (Duration: 2.7ms | GC: 0.2ms)
+  Rendered studies/new.html.erb within layouts/application (Duration: 4.7ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | GC: 0.2ms)
+Completed 200 OK in 684ms (Views: 8.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/studies" for ::1 at 2024-12-27 10:42:32 +0000
+Processing by StudiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering studies/index.html.erb within layouts/application
+  [1m[36mStudy Load (66.8ms)[0m  [1m[34mSELECT "studies".* FROM "studies" /*action='index',application='StudyApp',controller='studies'*/[0m
+  ↳ app/views/studies/index.html.erb:8
+  Rendered studies/_study.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/_study.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered studies/index.html.erb within layouts/application (Duration: 111.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 122.6ms | GC: 0.0ms)
+Completed 200 OK in 849ms (Views: 62.4ms | ActiveRecord: 66.8ms (1 query, 0 cached) | GC: 1.1ms)
+
+
+Started GET "/studies/6" for ::1 at 2024-12-27 10:42:34 +0000
+Processing by StudiesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mStudy Load (1.2ms)[0m  [1m[34mSELECT "studies".* FROM "studies" WHERE "studies"."id" = 6 LIMIT 1 /*action='show',application='StudyApp',controller='studies'*/[0m
+  ↳ app/controllers/studies_controller.rb:63:in `set_study'
+  Rendering layout layouts/application.html.erb
+  Rendering studies/show.html.erb within layouts/application
+  Rendered studies/_study.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered studies/show.html.erb within layouts/application (Duration: 5.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | GC: 0.0ms)
+Completed 200 OK in 1127ms (Views: 10.7ms | ActiveRecord: 1.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
